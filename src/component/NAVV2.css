@@ -1,0 +1,30 @@
+/* Navbar.css */
+
+.navbar2 {
+  display: flex;
+  margin-left: 15px;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#020418;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.route-links {
+  display: flex;
+}
+
+.route-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.route-links a:hover {
+  background-color: #555;
+}

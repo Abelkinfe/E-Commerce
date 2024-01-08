@@ -1,0 +1,36 @@
+/* Carousel.css */
+
+
+  
+  .card {
+    background-color:#838383;
+    width: 150px;
+    height: 300px;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: black;
+  }
+  
+  .card img {
+    width:150px;
+    height: 200px;
+    
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .card a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .card a:hover {
+    color: #555;
+  }
+  
+
+

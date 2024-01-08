@@ -1,0 +1,50 @@
+.box{
+    background-color:white;
+    width: 300px;
+    height: 300px;
+    font-family: sans-serif;
+    font-weight: 100;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 10px;
+    border-radius: 10px;
+}
+.box-container {
+    display: grid;
+    
+    padding: 10px;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 100px; 
+  }
+  
+
+
+
+  .image-container {
+    width: 90px; 
+    height: 90px;
+    display: block; 
+    border-radius: 50%; 
+    overflow: hidden;
+    margin-right: 20px; 
+  }
+  
+  .icon {
+    width:100%; 
+    height: auto; 
+    border-radius: 50%; 
+  }
+  
+  .content {
+    flex: 1; 
+  }
+  
+  h3 {
+    font-size: 24px; 
+    margin-bottom: 8px; 
+  }
+  
+  p {
+    font-size: 16px;
+  }

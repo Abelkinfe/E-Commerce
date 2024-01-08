@@ -1,0 +1,72 @@
+/* LoginForm.css */
+.login-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+  
+    background-color:#000000;
+    /* width: 1000px; */
+    font-family: sans-serif;
+    font-weight: 100;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px;
+
+
+  }
+  h2{
+    color: #FFFAFA;
+    
+
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+   
+    
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    color:white;
+  }
+  
+  .form-control {
+    
+    background-color: white;
+    width: 300px;;
+    padding: 8px;
+    color: black;
+    font-size: 16px;
+    /* border: 1px solid #ccc; */
+    border: none;
+    border-bottom: 1px solid white; /* Change the color as needed */
+    outline: none;
+    border-radius: 3px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,36 @@
+
+
+.product-page {
+    display: flex;
+  }
+  
+  .left-box {
+    width: 30%;
+    padding: 20px;
+    
+  }
+  
+  .right-box {
+    width: 70%;
+    padding: 20px;
+   
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    
+  }
+  
+  .product-description {
+    margin-top: 20px;
+   
+  }
+  
+  .add-to-cart {
+    margin-top: 20px;
+   
+  }
+  
+ 
+  
