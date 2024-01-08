@@ -25,7 +25,8 @@ const NAVV = () => {
     ) : (
       <>
         <Link to="/login">Sign in</Link>
-        <Link to="/register">Register</Link>
+            <Link to="/register">Register</Link>
+             <Link to="/register">djsddhd</Link>
       </>
     )}
   </div>
