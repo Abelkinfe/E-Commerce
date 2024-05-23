@@ -1,0 +1,82 @@
+/* Custom styles for the carousel */
+.caro {
+  background-color:transparent;
+  width: 1440px;           /* Limit the width to 80% of its container */
+  height: 300px;            /* Increase the height */
+  border-radius: 8px;
+  padding: 50px 50px;
+  text-align: center;
+  color: black;
+  /* margin: 0 auto;  */
+  padding-left: 0px;          /* Center the carousel horizontally */
+}
+
+/* Adjustments for the carousel content */
+.slick-slider {
+  width: 1440px;  
+  padding-left: 10px;            /* Fill the width of the carousel container */
+}
+
+/* Custom styles for navigation arrows */
+.slick-prev, .slick-next {
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  color: white;                          /* Text color */
+  width: 40px;                           /* Increase button width */
+  height: 40px;                          /* Increase button height */
+  line-height: 40px;                     /* Center text vertically */
+  border-radius: 50%;                    /* Circular shape */
+  z-index: 1;                            /* Ensure arrows are above the slides */
+}
+
+.slick-prev {
+  left: 20px;
+            /* Adjust the position of the previous arrow */
+}
+
+.slick-next {
+  right: 20px;              /* Adjust the position of the next arrow */
+}
+
+
+
+
+
+.slick-dots {
+  position: relative;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  font-size: 16px;         /* Adjust the size of the dots */
+  width: 20px;             /* Increase dot width */
+  height: 20px;            /* Increase dot height */
+  border-radius: 50%;      /* Make dots circular */
+  background-color: rgba(0, 0, 0, 0.5); /* Dot background color */
+  position: relative;
+  z-index: 1;
+}
+
+.slick-dots li button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.slick-dots li.slick-active button:before {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+

@@ -1,0 +1,52 @@
+.container {
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('background.jpg'); /* Replace 'background.jpg' with your background image */
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px;
+  }
+  
+  .box {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 350px;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+    width: 1000px;
+    outline: none;
+  }
+  
+  .btn {
+    background-color: blue; /* Make the background transparent */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Add border for visibility */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add transition effect */
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background color on hover */
+  }
+
+  button{
+    background: transparent;
+  }
+  

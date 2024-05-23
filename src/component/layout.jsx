@@ -1,17 +1,27 @@
 import React from 'react'
-
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Card from './card'
-import Footer from './Footer'
+import './layout.css'
+import Carousel from './carousel';
 
 const Layouts = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <>
       
-      <div>
-        <Card></Card>
+      <div >
+       <Carousel></Carousel>
       </div>
-      <div>
-        <Footer></Footer>
+      <div className='box-container'>
+        <Card></Card>
       </div>
      
 

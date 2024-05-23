@@ -1,0 +1,113 @@
+.App {
+    display: flex;
+    height: 100vh;
+    /* height: inherit; */
+    background-color: #333; 
+  }
+  
+  .sidebar {
+    width: 250px; 
+    background-color:#C4C484;
+    height: inherit;
+    color: white;
+  }
+  .imgpro{
+    background-color: blue;
+  }
+  .disc{
+    height: 70px;
+    width: 600px;
+  }
+  .sele{
+    height: 40px;
+    width: 100px;
+  }
+  .nam{
+    background-color: aquamarine;
+    width: 200px;
+  }
+  .user-container {
+    padding: 20px;
+  }
+  
+  .circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    background-size: cover;
+  }
+  
+  .username {
+    margin-top: 20px;
+    margin-left: 10px;
+    
+    display: block;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  .transparent-form {
+    background-color: #333(255, 255, 255, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .transparent-form label,
+ 
+  .transparent-form select,
+  .transparent-form button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .transparent-form button {
+    background-color:blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .transparent-form button:hover {
+    background-color:blue;
+  }
+  .blue-input[type="file"]::-webkit-file-upload-button {
+    background-color: blue; /* Change the background color of the button */
+    color: white; /* Change the text color of the button */
+    padding: 8px 12px; /* Adjust padding as needed */
+    border-radius: 4px; /* Add border-radius for rounded corners */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor on hover */
+  }
+
+  .blue-input {
+    border-color: blue;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+
+
+
+

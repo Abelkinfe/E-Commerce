@@ -1,0 +1,142 @@
+
+  .App {
+    display: flex;
+    height: 100vh;
+    /* height: inherit; */
+    background-color: #333; 
+  }
+  
+  .sidebar {
+    width: 250px; 
+    height: inherit;
+    background-color: #C4C484;
+    color: white;
+  }
+  .imgpro{
+    background-color: blue;
+  }
+  .disc{
+    height: 70px;
+    width: 600px;
+  }
+  .sele{
+    height: 40px;
+    width: 100px;
+  }
+  .nam{
+    background-color: aquamarine;
+    width: 200px;
+  }
+  .user-container {
+    padding: 20px;
+  }
+  
+  .circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    background-size: cover;
+  }
+  
+  .username {
+    margin-top: 20px;
+    margin-left: 10px;
+    
+    display: block;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+
+
+
+
+  .add-payment-button {
+    background-image: linear-gradient(to right, purple,rgb(204, 137, 60));
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .add-payment-button:hover {
+    opacity: 0.9;
+  }
+  
+  .add-payment-button:active {
+    transform: translateY(1px);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  table{
+    background-color: azure;
+    width: 1000px;
+    font-family: sans-serif;
+    font-weight: 100;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px;
+}
+
+th,td{
+    
+    padding: 10px;
+    color:white;
+
+}
+
+
+th{
+    text-align: left;
+}
+thead th{
+    background-image: linear-gradient(to right, blue,white);
+}
+
+tbody tr:hover{
+    background-color:#F1F1F1;
+
+}
+tbody{
+    position:relative;
+
+}
+
+tbody td:hover::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(31, 46, 41);
+    left: 0;
+    right:0;
+    top: -9999px;
+    bottom: -9999px;
+    z-index:-1;
+
+}

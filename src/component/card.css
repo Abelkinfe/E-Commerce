@@ -1,36 +1,52 @@
-/* Carousel.css */
+.card {
+  padding-left: 20px;
+  background-color:transparent;
+  width: 350px;
+  height: auto;
+  font-family: sans-serif;
+  font-weight: 100;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 10px  rgba(164, 132, 196, 1);
+  border-radius: 20px;
+}
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  height: auto;
+}
 
-  
-  .card {
-    background-color:#838383;
-    width: 150px;
-    height: 300px;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    color: black;
-  }
-  
-  .card img {
-    width:150px;
-    height: 200px;
-    
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .card a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .card a:hover {
-    color: #555;
-  }
-  
+.grid-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.see-more {
+  display: flex;
+  margin-left: 100px;
+  margin-top: 10px;
+  color:rgb(224, 17, 17);
+}
 
+.top-left,
+.top-right,
+.bottom-left,
+.bottom-right {
+  text-align: center;
+  box-shadow: 0 0 10px  rgba(164, 132, 196, 1);
+  border-radius: 20px;
+}
+
+.top-left img,
+.top-right img,
+.bottom-left img,
+.bottom-right img {
+  width: 100px;
+  height: 100px;
+  
+}

@@ -2,11 +2,11 @@ import React from 'react'
 import './Account.css'
 import { Link } from 'react-router-dom';
 import payorder from './shopping-cart.png'
-import logsec from './login.png'
 import location from './location.png'
 import profile from './profile.png'
 import customer from './customer.png'
 import payment from './payment.png'
+import stock from './stock.png'
 const Account = () => {
   return (
     <>
@@ -25,14 +25,14 @@ const Account = () => {
           </div>
         </Link>
         
-        <Link to="/">
+        <Link to="/sell">
         <div className='box'>
         <div className='image-container'>
-        <img src={logsec} alt='Icon' className='icon' />
+        <img src={stock} alt='Icon' className='icon' />
             </div>
             <div className='content'>
-        <h3>Login&security</h3>
-        <p>Edit login,name and email,password</p>
+        <h3>your product</h3>
+        <p>sell and manage your product</p>
       </div>
        
           </div>
@@ -53,7 +53,7 @@ const Account = () => {
           </div>
         </Link>
         
-        <Link to="/">
+        <Link to="/editprofile">
         <div className='box'>
         <div className='image-container'>
         <img src={profile} alt='Icon' className='icon' />
@@ -78,7 +78,7 @@ const Account = () => {
        
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/payment">
         <div className='box'>
         <div className='image-container'>
         <img src={payment} alt='Icon' className='icon' />

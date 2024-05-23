@@ -1,43 +1,52 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import './Form.css'; // Import your CSS file for styling
+import React,{ useState } from 'react';
+import useAuthContext from '../context/AuthContext'
+import './Form.css';
 
 const LoginForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
+    const { login } = useAuthContext();
+    
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        login({ email, password });
+    }
+   
 
-    const onSubmit = (data) => {
-        console.log('Submitted:', data);
-        // You can handle form submission logic here
-    };
 
     return (
         <div className="login-form-container">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className="form">
+            <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
-                        type="text"
-                        id="name"
-                        {...register('name', { required: true })}
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e)=>setemail(e.target.value)}
                         className="form-control"
                     />
-                    {errors.name && <span className="error-message">This field is required</span>}
+                    {/* {errors.email && <div>
+                        <span className="error-message">{errors.email[0]}</span>
+                    </div>} */}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
                         id="password"
-                        {...register('password', { required: true })}
+                        value={password}
+                        onChange={(e)=>setpassword(e.target.value)}
                         className="form-control"
                     />
-                    {errors.password && <span className="error-message">This field is required</span>}
+                    {/* {errors.password && <div> <span className="error-message">{errors.password[0]}</span>
+                    </div>} */}
                 </div>
                 <button type="submit" className="submit-btn">Submit</button>
             </form>
             <p>
-                Don't have an account? <a href="/register">Register here</a>.
+                Don't have an account? <a href="/register">Register here</a>
             </p>
         </div>
     );

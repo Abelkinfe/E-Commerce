@@ -7,7 +7,7 @@
     /* border: 1px solid #ccc; */
     border-radius: 5px;
   
-    background-color:#000000;
+    background-color:#C4C484;
     /* width: 1000px; */
     font-family: sans-serif;
     font-weight: 100;
@@ -34,7 +34,7 @@
     display: block;
     margin-bottom: 5px;
     /* margin-left: 5px; */
-    color:white;
+    color:black;
   }
   
   .form-control2 {

@@ -2,12 +2,13 @@
 
 .navbar2 {
   display: flex;
-  margin-left: 15px;
+ 
   align-items: center;
   justify-content: space-between;
-  background-color:#020418;
-  color: #fff;
-  padding: 10px 20px;
+  background-color:#B38B62;
+  color: #130f0f;
+  padding:0PX;
+  width: 100%;
 }
 
 .menu-button {
@@ -20,11 +21,12 @@
 
 .route-links a {
   text-decoration: none;
-  color: #fff;
+  color:black;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
 .route-links a:hover {
-  background-color: #555;
+  background-color:#B38B62;
+  color: #84C4A4;
 }

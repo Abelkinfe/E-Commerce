@@ -2,13 +2,13 @@
 
 .navbar {
   display: flex;
-  height: 50px;
-  width: 1300px;
-  
+  height: 100px;
+  width:100%;
+ color: black;
   align-items: center;
   justify-content: space-between;
-  background-color: #02072f;
-  padding: 10px;
+  background-color:#C4A484;
+  
 }
 
 .input {
@@ -16,7 +16,7 @@
   
   height: 10px;
   
-  padding: 10px;
+ 
   
   font-size: 16px;
   
@@ -25,35 +25,97 @@
   border: 1px solid #ccc;
   
 }
+.menu-button{
+  padding-left: 20px;
+
+}
+
 
 .search-bar {
   display: flex;
+  width: 700px;
   align-items: center;
 }
 
 .search-bar select {
   height: 30px;
-  width: 30px;
+  width: 100px; 
+  border-radius: 15px; 
 }
 
 .search-bar input {
-  margin-right: 5px;
-
-  
+  flex: 1; 
+  margin:5px 5px 5px 5px;
+  border-radius: 15px; 
+  width: 70px; 
+   
 }
 
 .search-button {
-  width: 30px;
-  height: 30px;
-
+  width: 20px;
+  height: 20px;
+  padding-bottom: 10px;
+  border-radius: 15px; 
+  border: #fff;
+  
 }
 
 .auth-links a {
-  margin-right: 10px;
-  text-decoration: none;
+ 
+  padding-right: 30px;
   color: white;
 }
 
 .auth-links a:hover {
-  
+  color: #d41212;
 }
+
+
+
+
+
+
+.mirror-button {
+
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff; 
+  font-size: 16px;
+  
+  margin-right: 40px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.mirror-button:hover {
+  
+  box-shadow: 0 0 20px rgba(238, 6, 6, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
