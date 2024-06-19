@@ -15,7 +15,9 @@ const NAVV2 = () => {
 
   return (
     <nav className="navbar2">
-      <div className="menu-button"onClick={toggleDropdown}><img src={menu} className="card-image" />
+      <Link to="/home"><img src={menu} className="card-image" /></Link>
+      <div className="menu-button" onClick={toggleDropdown}>
+      
         {isDropdownOpen && (
           <div className="dropdown-content">
             <h3>hello</h3>

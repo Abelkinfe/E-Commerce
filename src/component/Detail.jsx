@@ -1,29 +1,80 @@
-import React from 'react'
-import "./Detail.css"
-const detail = () => {
-  return (
-      <>
-            <div className="container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        {/* Sidebar content goes here */}
-        Sidebar
-      </div>
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import './Detail.css';
 
-      {/* Main Content */}
-      <div className="main-content">
-        {/* Content with card */}
-        <div className="card">
-          {/* Car details */}
-          <h2>Car Name</h2>
-          <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p>Price: $50,000</p>
-          <p>Rating: 4.5/5</p>
+const Detail = () => {
+    const { su } = useParams(); 
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    const fetchProductDetails = async () => {
+        setLoading(true);
+        const token = localStorage.getItem('token');
+        
+        if (!token) {
+            setLoading(false);
+            console.warn('No token found');
+            return;
+        }
+
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        };
+
+        const baseURL = 'http://127.0.0.1:8900';
+        const fullURL = `${baseURL}/api/detailfor/${su}`;
+        
+        console.log('Fetching product details from URL:', fullURL);
+
+        try {
+            const response = await axios.get(fullURL, config);
+            console.log('API Response detail:', response.data);
+
+            if (response.data && response.data.length > 0) {
+                setProducts(response.data);
+            } else {
+                console.warn('No product data returned from API');
+            }
+        } catch (err) {
+            console.error('Error fetching product details:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchProductDetails();
+    }, [su]);
+
+    const BASE_URL = 'http://127.0.0.1:8900/';
+    return (
+        <div className="detail-container">
+            {loading ? (
+                <div>Loading...</div>
+            ) : products.length > 0 ? (
+                products.map((product, index) => (
+                    <div key={index} className="product-card">
+                        <div className="product-img">
+                            <img className="caroimg" src={`${BASE_URL}storage/${product.product_img}`} alt={product.name} />
+                        </div>
+                        <div className="product-details">
+                            <h2>{product.name}</h2>
+                            <p>{product.description}</p>
+                            <p>Stock: {product.qty_instock}</p>
+                            <p>Price: ${product.price}</p>
+                            <p>Variety: {product.variety}</p>
+                            <p>Variety Option: {product.variety_option}</p>
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <div>No product details available.</div>
+            )}
         </div>
-      </div>
-    </div>
-      </>
-  )
-}
+    );
+};
 
-export default detail
+export default Detail;

@@ -5,8 +5,9 @@
  
   align-items: center;
   justify-content: space-between;
-  background-color:#B38B62;
-  color: #130f0f;
+  background-color:#1A1A1A;
+  border-top: 1px solid #F93891;
+  color:white;
   padding:0PX;
   width: 100%;
 }
@@ -21,12 +22,12 @@
 
 .route-links a {
   text-decoration: none;
-  color:black;
+  color:white;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
 .route-links a:hover {
-  background-color:#B38B62;
-  color: #84C4A4;
+  background-color:#F93891;
+  color:black;
 }

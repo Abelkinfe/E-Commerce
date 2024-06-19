@@ -2,6 +2,7 @@
     display: block;
     flex-direction: column;
     background-color:black;
+    height: 1450px;
   }
   
   .top-content {
@@ -27,30 +28,34 @@
  
 
 
-
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
 
 
 
   .cardo {
     width: 350px;
-    height: auto; /* Allow height to adjust based on content */
+    height: auto; 
     border: 2px solid #000;
-    box-shadow: 0 0 10px rgba(164, 132, 196, 1);
+    box-shadow: 0 0 10px rgba(247,7,118);
     margin-left: 80px;
-    background-color: brown;
+    background-color:transparent;
   }
   
   .card__photo {
     width: 100%;
-    height: auto; /* Allow image to adjust based on width */
-    display: block; /* Remove any default spacing */
+    height: auto; 
+    display: block; 
   }
   
   .name {
     padding: 10px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
   }
   

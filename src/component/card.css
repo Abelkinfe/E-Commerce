@@ -1,25 +1,41 @@
-.card {
+.cardS {
   padding-left: 20px;
-  background-color:transparent;
+  margin-top: 70px;
+  background-color: #1A1A1A;
   width: 350px;
   height: auto;
   font-family: sans-serif;
   font-weight: 100;
   border-collapse: collapse;
   overflow: hidden;
-  box-shadow: 0 0 10px  rgba(164, 132, 196, 1);
+  border: 1px solid #f70776;
+  box-shadow: 0 0 10px rgba(247, 7, 118, 1);
   border-radius: 20px;
+  margin-right: 5px;
 }
 
+.redo {
+  text-align: center;
+  color: #f70776;
+}
+
+.redoo {
+  
+  padding-left: 10px;
+  color: #f70776;
+}
 .grid-container {
+  background-color: #1A1A1A;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   height: auto;
+  color: #f70776;
 }
 
 .grid-container > div {
+  background-color: #1A1A1A;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,25 +44,44 @@
 
 .see-more {
   display: flex;
-  margin-left: 100px;
+  justify-content: center;
   margin-top: 10px;
-  color:rgb(224, 17, 17);
+  color: rgb(224, 17, 17);
 }
 
-.top-left,
-.top-right,
-.bottom-left,
-.bottom-right {
+.top-left {
   text-align: center;
-  box-shadow: 0 0 10px  rgba(164, 132, 196, 1);
+  box-shadow: 0 0 10px rgba(247, 7, 118, 1);
   border-radius: 20px;
+  background-color: #1A1A1A;
+  padding: 10px;
+  color: #f70776;
 }
 
-.top-left img,
-.top-right img,
-.bottom-left img,
-.bottom-right img {
-  width: 100px;
-  height: 100px;
+.top-left img {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; 
+}
+
+.top-left p {
+  color: #f70776;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.product-nameo{
+  text-align: center;
+  padding-top: 3px;
+  padding-left: 2px;
+  color: #f70776;
+}
+.product-cardD{
+  text-align: center;
+  color: #f70776;
   
 }

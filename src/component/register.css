@@ -7,14 +7,14 @@
     /* border: 1px solid #ccc; */
     border-radius: 5px;
   
-    background-color:#C4C484;
+    background-color:transparent;
     /* width: 1000px; */
     font-family: sans-serif;
     font-weight: 100;
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px;
-    color:black;
+    color:white;
 
 
   }
@@ -34,7 +34,7 @@
     display: block;
     margin-bottom: 5px;
     /* margin-left: 5px; */
-    color:black;
+    color:white;
   }
   
   .form-control2 {
@@ -58,7 +58,7 @@
   }
   
   .submit-btn {
-    background-color: #007bff;
+    background-color: #f70776;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;

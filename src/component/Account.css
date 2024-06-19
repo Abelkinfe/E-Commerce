@@ -8,6 +8,7 @@
   overflow: hidden;
   box-shadow: 0 0 10px rgba(180, 4, 233, 0.877);
   border-radius: 20px;
+  border: 1px solid #f70776; 
 }
 
 .box-container {
@@ -16,6 +17,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 50px;
+ 
 }
 
 .image-container {

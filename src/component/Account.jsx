@@ -40,14 +40,14 @@ const Account = () => {
         
 
 
-        <Link to="/">
+        <Link to="/address">
         <div className='box'>
         <div className='image-container'>
         <img src={location} alt='Icon' className='icon' />
             </div>
             <div className='content'>
-        <h3>Your Profile</h3>
-        <p>edit,remove or set default address</p>
+        <h3>Your location</h3>
+        <p>set default address</p>
       </div>
        
           </div>

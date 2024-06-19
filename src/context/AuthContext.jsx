@@ -116,35 +116,7 @@ export const AuthProvider = ({ children }) => {
     // }
    
 
-    const sellpro = async ({ ...data }) => {
-        // try {
-        //     const token = localStorage.getItem('token');
-      
-        //     if (!token) {
-        //         console.error("Token not found in localStorage.");
-            
-        //         return;
-        //     }
-      
-        //     const config = {
-        //         headers: {
-        //             'Authorization': `Bearer ${token}`
-        //         }
-        //     };
-      
-        //     const response = await axios.post('/api/sellproduct', data,config);
-        //     setsellproduct(response.data);
-        //     console.log(response.data);
-         
-      
-          
-        //     return response;
-        // } catch (error) {
-          
-        //   console.error('Error:', error);
-        //   throw error;
-        // }
-    };
+    
     
     const payform = async ({ ...data }) => {
         try {
@@ -223,7 +195,7 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={{
             user, errors, getUser,
             login, logout,
-            updateUser,sellpro, sellproduct,
+            updateUser, 
             payform, Getproduct,getproduct
         }}>
             {children}

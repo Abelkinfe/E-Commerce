@@ -17,6 +17,7 @@ import PaymentForm from './component/PaymentForm'
 import Footer from './component/Footer'
 import Advert from './component/Adverts'
 import Detail from './component/Detail'
+import Address from './component/Address'
 function App() {
 
 
@@ -41,6 +42,9 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<Register />} />
           <Route path="/advert" element={<Advert />} />
+          <Route path="/address" element={<Address />} />
+          <Route path="/category/:categoryName" element={<Advert />} />
+          <Route path="/detail/:su" element={<Detail />} />
       </Routes>
       <div>
         <Footer></Footer>

@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Card from './card'
 import './layout.css'
-import Carousel from './carousel';
+import Carousel from './Carousel';
 
 const Layouts = () => {
   var settings = {
