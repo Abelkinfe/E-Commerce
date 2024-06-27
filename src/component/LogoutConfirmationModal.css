@@ -1,0 +1,54 @@
+/* LogoutConfirmationModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #F93891;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center; /* Center the content horizontally */
+    max-width: 400px; /* Restrict max-width for better center alignment */
+    width: 100%;
+  }
+  
+  .modal-content h2 {
+    color: black; /* Set the color to black */
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove default margin */
+    padding: 20px 0; /* Add padding to space the text */
+    font-size: 1.5em; /* Adjust the font size as needed */
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .modal-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .modal-button.confirm {
+    background: #28a745;
+    color: white;
+  }
+  
+  .modal-button.cancel {
+    background: #dc3545;
+    color: white;
+  }
+  

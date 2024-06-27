@@ -4,7 +4,7 @@ import axios from '../api/axios';
 import { Link } from 'react-router-dom';
 import './Advert.css';
 import vid from './videos/makevid.mp4';
-import dd from './dddd.jpg';  // Placeholder image
+import dd from './dddd.jpg';  
 
 const Advert = () => {
   const { categoryName } = useParams();

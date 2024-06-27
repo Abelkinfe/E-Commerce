@@ -1,24 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuthContext from '../context/AuthContext';
 import './NAVV.css';
-import { Link } from 'react-router-dom';
 import search from './searchh.png';
-import kiki from './kiki.svg';  // Import the SVG file
+import kiki from './kiki.svg';
+import LogoutConfirmationModal from './LogoutConfirmationModal';
 
 const NAVV = () => {
   const { user, getUser, logout } = useAuthContext();
-  
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
-    if (!user) {
+    const token = localStorage.getItem('token');
+    if (token && !user) {
       getUser();
     }
   }, [user, getUser]);
 
+  const handleLogout = () => {
+    setShowModal(true);
+  };
+
+  const handleConfirmLogout = () => {
+    logout();
+    setShowModal(false);
+    navigate('/home');
+  };
+
+  const handleCancelLogout = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="navbar">
-      <div className="logo">
-        <img src={kiki} alt="Logo" className="logo-image" />  {/* Use a class for styling */}
-      </div>
+      <Link to="/home">
+        <div className="logo">
+          <img src={kiki} alt="Logo" className="logo-image" />
+        </div>
+      </Link>
       <div className="badge"></div>
       <div className="search-bar">
         <select></select>
@@ -33,7 +53,7 @@ const NAVV = () => {
             <>
               <div>Welcome, {user?.name}</div>
               <Link to="/Account">Profile</Link>
-              <button className='mirror-button' onClick={logout}>Logout</button>
+              <button className='mirror-button' onClick={handleLogout}>Logout</button>
             </>
           ) : (
             <>
@@ -43,6 +63,13 @@ const NAVV = () => {
           )}
         </div>
       </div>
+
+      {showModal && (
+        <LogoutConfirmationModal
+          onConfirm={handleConfirmLogout}
+          onCancel={handleCancelLogout}
+        />
+      )}
     </div>
   );
 };

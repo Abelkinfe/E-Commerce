@@ -30,7 +30,7 @@ const Detail = () => {
         console.log('Fetching product details from URL:', fullURL);
 
         try {
-            const response = await axios.get(fullURL, config);
+            const response = await axios.get(fullURL);
             console.log('API Response detail:', response.data);
 
             if (response.data && response.data.length > 0) {

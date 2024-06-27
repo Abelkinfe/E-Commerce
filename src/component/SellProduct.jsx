@@ -11,17 +11,18 @@ const SellProduct = () => {
     price: '',
     qty_instock: '',
     cata_name: '',
-    parent_category_id: ''
+    parent_category_id: '',
+    variety_name: '' // Add variety_name to the form data state
   });
 
   const [categories, setCategories] = useState([]);
-  const [procard, setprocard] = useState(null); // Initialize as null for better checks
+  const [procard, setprocard] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
 
-  const {  user, getUser } = useAuthContext();
+  const { user, getUser } = useAuthContext();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -63,6 +64,7 @@ const SellProduct = () => {
     data.append('price', formData.price);
     data.append('cata_name', formData.cata_name);
     data.append('parent_category_id', formData.parent_category_id);
+    data.append('variety_name', formData.variety_name); // Append variety_name to form data
 
     try {
       const token = localStorage.getItem('token');
@@ -96,7 +98,7 @@ const SellProduct = () => {
         const token = localStorage.getItem('token');
         if (!token) {
           console.error("Token not found in localStorage.");
-          setLoading(false); // Stop loading if token is not found
+          setLoading(false);
           return;
         }
         const config = {
@@ -119,7 +121,7 @@ const SellProduct = () => {
         const token = localStorage.getItem('token');
         if (!token) {
           console.error("Token not found in localStorage.");
-          setLoading(false); // Stop loading if token is not found
+          setLoading(false);
           return;
         }
         const config = {
@@ -129,10 +131,10 @@ const SellProduct = () => {
         };
 
         const response = await axios.get('/api/productcard', config);
-        console.log("Product Card Response:", response.data); 
+        console.log("Product Card Response:", response.data);
         if (Array.isArray(response.data) && response.data.length > 0) {
           setprocard(response.data);
-          console.log("Updated procard state:", response.data); 
+          console.log("Updated procard state:", response.data);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -147,7 +149,7 @@ const SellProduct = () => {
 
     fetchData();
     productcard();
-  }, [ user, getUser]);
+  }, [user, getUser]);
 
   const handleCategoryChange = async (e) => {
     const categoryId = e.target.value;
@@ -202,7 +204,6 @@ const SellProduct = () => {
           ) : (
             <p>No product card found</p>
           )}
-
         </div>
       </div>
       <div className="main-contentSell">
@@ -244,6 +245,11 @@ const SellProduct = () => {
             ))}
           </datalist>
           {errors.cata_name && <p className="error">{errors.cata_name[0]}</p>}
+
+          <label htmlFor="variety_name">Variety Name:</label> {/* Add input for variety_name */}
+          <input name="variety_name" value={formData.variety_name} onChange={handleChange} type="text" id="variety_name" className="variety-sell" placeholder="Enter variety name" required />
+          {errors.variety_name && <p className="error">{errors.variety_name[0]}</p>}
+
           <button className="buttonsell" type="submit">Submit</button>
         </form>
       </div>

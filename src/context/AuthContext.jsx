@@ -1,11 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState ,useCallback ,useEffect } from "react";
 import axios from "../api/axios";
 import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
     
     const [editUser, setedituser] = useState();
     const [sellproduct, setsellproduct] = useState();
@@ -13,36 +13,29 @@ export const AuthProvider = ({ children }) => {
     const [errors, setErrors] = useState();
     const navigate = useNavigate();
     
-    const getUser = async () => {
+    const getUser = useCallback(async () => {
         try {
-           
-            const token = localStorage.getItem('token');
-            console.log('token is:',token)
+          const token = localStorage.getItem('token');
+          if (!token) return;
     
-            
-            if (!token) {
-                console.error("Token not found in localStorage.");
-                navigate('/home');
-                return;
-            }
-    
-            const config = {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            };
-            
-              const { data } = await axios.get('/api/user', config);
-            setUser(data);
-          
-            console.log(data);
-            
+          const config = {
+            headers: { 'Authorization': `Bearer ${token}` }
+          };
+          const { data } = await axios.get('/api/user', config);
+          setUser(data); // Set user data
         } catch (error) {
-            console.error("Error fetching user:", error);
+          console.error("Error fetching user:", error);
+          localStorage.removeItem('token'); 
         }
-        
-       
-    }
+      }, []);
+    
+      useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token && !user) {
+          getUser();
+        }
+      }, [getUser, user]);
+
 
 
 
@@ -92,11 +85,11 @@ export const AuthProvider = ({ children }) => {
         }
     }
     const logout = () => {
-       
         localStorage.removeItem('token');
-       
-        navigate('/home');
-    }
+        setUser(null); 
+        navigate('/home'); 
+      };
+ 
 
     // const userRegister = async ({ ...data }) => {
        
@@ -115,7 +108,7 @@ export const AuthProvider = ({ children }) => {
     //     }
     // }
    
-
+  
     
     
     const payform = async ({ ...data }) => {
