@@ -1,13 +1,14 @@
 .App {
     display: flex;
-    height: 100vh;
+    height: 2000px;
     /* height: inherit; */
     background-color: #333; 
   }
   
   .sidebar {
     width: 250px; 
-    background-color:#C4C484;
+    border-top: 1px solid #f70776;
+    background-color:#1A1A1A;
     height: inherit;
     color: white;
   }
@@ -31,11 +32,14 @@
   }
   
   .circle-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ccc;
-    background-size: cover;
+    width: 80px;
+  height: 80px; 
+  border-radius: 50%; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:transparent;
   }
   
   .username {

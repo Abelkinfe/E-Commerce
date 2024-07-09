@@ -18,6 +18,8 @@ import Footer from './component/Footer'
 import Advert from './component/Adverts'
 import Detail from './component/Detail'
 import Address from './component/Address'
+import DetailPay from './component/DetailPay'
+
 function App() {
 
 
@@ -45,6 +47,8 @@ function App() {
           <Route path="/address" element={<Address />} />
           <Route path="/category/:categoryName" element={<Advert />} />
           <Route path="/detail/:su" element={<Detail />} />
+          <Route path="/detailpay/:id" element={<DetailPay />} />
+       
       </Routes>
       <div>
         <Footer></Footer>

@@ -38,7 +38,7 @@ const Card = () => {
     fetchData();
   }, []);
 
-  const BASE_URL = 'http://127.0.0.1:8900/';
+  const BASE_URL = 'http://127.0.0.1:8100/';
 
   const renderProduct = (product, index) => {
     const categoryID = product.category_id; 

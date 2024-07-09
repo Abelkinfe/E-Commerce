@@ -12,7 +12,7 @@ const Account = () => {
     <>
       <div className='box-container'>
       <Link to="/">
-          <div className='box'>
+          <div className='boxx'>
             
           <div className='image-container'>
         <img src={payorder} alt='Icon' className='icon' />
@@ -26,7 +26,7 @@ const Account = () => {
         </Link>
         
         <Link to="/sell">
-        <div className='box'>
+        <div className='boxx'>
         <div className='image-container'>
         <img src={stock} alt='Icon' className='icon' />
             </div>
@@ -41,7 +41,7 @@ const Account = () => {
 
 
         <Link to="/address">
-        <div className='box'>
+        <div className='boxx'>
         <div className='image-container'>
         <img src={location} alt='Icon' className='icon' />
             </div>
@@ -54,7 +54,7 @@ const Account = () => {
         </Link>
         
         <Link to="/editprofile">
-        <div className='box'>
+        <div className='boxx'>
         <div className='image-container'>
         <img src={profile} alt='Icon' className='icon' />
             </div>
@@ -67,7 +67,7 @@ const Account = () => {
         </Link>
         
         <Link to="/">
-        <div className='box'>
+        <div className='boxx'>
         <div className='image-container'>
         <img src={customer} alt='Icon' className='icon' />
             </div>
@@ -79,7 +79,7 @@ const Account = () => {
           </div>
         </Link>
         <Link to="/payment">
-        <div className='box'>
+        <div className='boxx'>
         <div className='image-container'>
         <img src={payment} alt='Icon' className='icon' />
             </div>

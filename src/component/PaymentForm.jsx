@@ -1,70 +1,110 @@
-import React, { useState,useEffect } from 'react'
-import useAuthContext from '../context/AuthContext'
-import './paymentform.css'
+import React, { useState, useEffect } from 'react';
+import useAuthContext from '../context/AuthContext';
+import './paymentform.css';
+
 const PaymentForm = () => {
-    const [paymentprovider, setpaymentprovider] = useState('');
-    const [account_no, setaccount_no] = useState('');
-  const [value, setvalue] = useState('');
-  const [receipt_number, setreceipt_number] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const [value, setValue] = useState('');
+
     const { user, getUser } = useAuthContext();
 
-
-
     useEffect(() => {
-
         if (!user) {
             getUser();
         }
-    }, [])
+    }, [user, getUser]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-    }
+        // Handle the form submission logic here
+        console.log({
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            value,
+        });
+    };
+    const BASE_URL = 'http://127.0.0.1:8900/';
     return (
-      <>
-    <div className="App">
-    <div className="sidebar">
-      { user &&(
-        <div className="user-container">
-                      <div className="circle-image">
-                      <img src={user.photo} alt='' className="product-image" />
-          </div>
-          <span className="username">{user.name}</span>
-        </div>)
-              }
-            <div>
-              
-          
-              </div>
-      
+        <>
+            <div className="App">
+                <div className="sidebar">
+                    {user && (
+                        <div className="user-container">
+                            <div className="circle-image">
+                            <img src={`${BASE_URL}storage/${user.user_image}`} alt="" className="user-image" />
+                            </div>
+                            <span className="username">{user.name}</span>
+                        </div>
+                    )}
+                </div>
+                <div className="main-content">
+                    <form onSubmit={handleSubmit} className="transparent-form">
+                        <label htmlFor="first_name">First Name</label>
+                        <input
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            type="text"
+                            id="first_name"
+                            className="nam"
+                            placeholder="Enter your first name"
+                            name="first_name"
+                        />
 
-</div>
-    <div className="main-content">
-    
-<form   onSubmit={handleSubmit} className="transparent-form">
-    <label htmlFor="provider_name">payment provider/bank name</label>
-    <input value={paymentprovider} onChange={(e)=>setpaymentprovider(e.target.value)} type="text" id="provider_name" className='nam'  placeholder="upload payment provider/bank name" name="product_name" />
+                        <label htmlFor="last_name">Last Name</label>
+                        <input
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            type="text"
+                            id="last_name"
+                            className="nam"
+                            placeholder="Enter your last name"
+                            name="last_name"
+                        />
 
-        
-        <label htmlFor="price">account no/phone number</label>
-        <input value={account_no} onChange={(e)=>setaccount_no(e.target.value)} type="text" id="price" name="price" placeholder="upload account number/phone number:if you are using wallet" />
-        
-    
-    <label htmlFor="product_name">payment type:</label>
-    <input value={value} onChange={(e)=>setvalue(e.target.value)} type="text" id="product_name" className='nam'  placeholder="upload payment type" name="product_name" />
-   
-    {/* <label htmlFor="receipt">receipt number:</label>
-    <input value={receipt_number} onChange={(e)=>setreceipt_number(e.target.value)} type="text" id="receipt" className='nam'  placeholder="upload receipt number" name="product_name" /> */}
-    <button type="submit">Submit</button>
-        </form>
-    
-      
-     
-</div>
+                        <label htmlFor="phone_number">Phone Number</label>
+                        <input
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            type="text"
+                            id="phone_number"
+                            className="nam"
+                            placeholder="Enter your phone number"
+                            name="phone_number"
+                        />
+
+                        <label htmlFor="email">Email</label>
+                        <input
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="email"
+                            id="email"
+                            className="nam"
+                            placeholder="Enter your email"
+                            name="email"
+                        />
+
+                        <label htmlFor="value">provider/bank name</label>
+                        <input
+                            value={value}
+                            onChange={(e) => setValue(e.target.value)}
+                            type="text"
+                            id="value"
+                            className="nam"
+                            placeholder="Enter the value"
+                            name="value"
+                        />
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
-            </>
-  )
-}
+        </>
+    );
+};
 
-export default PaymentForm
+export default PaymentForm;

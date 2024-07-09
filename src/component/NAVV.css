@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #000000;
-  border-bottom: 1px solid #f70776;
+  border-bottom: 0.1px solid #f70776;
   padding: 0 20px; 
 }
 
@@ -36,14 +36,17 @@
 
 .search-bar {
   display: flex;
+  
   width: 700px;
-  align-items: center;
+ 
 }
 
 .search-bar select {
   height: 30px;
   width: 100px;
+  padding-top: 50px;
   border-radius: 15px;
+  color: white;
 }
 
 .search-bar input {
@@ -51,18 +54,25 @@
   margin: 5px;
   border-radius: 15px;
   width: 70px;
+  padding-bottom: 20px;
 }
 
 .search-button {
-  width: 20px;
-  height: 20px;
-  padding-bottom: 10px;
+  width: 40px;
+  height: 30px;
   border-radius: 15px;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"%3E%3Cpath d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.07-.59 4.21-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"%3E%3C/path%3E%3C/svg%3E');
+  background-size: 60% auto; /* Adjust size of the icon */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .auth-links a {
-  padding-right: 30px;
+  padding-right: 60px;
+ 
   color: white;
 }
 

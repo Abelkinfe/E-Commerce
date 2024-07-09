@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useAuthContext from '../context/AuthContext';
 import axios from '../api/axios';
 import './Sell.css';
+import { useNavigate } from 'react-router-dom';
 
 const SellProduct = () => {
   const [formData, setFormData] = useState({
@@ -12,9 +13,10 @@ const SellProduct = () => {
     qty_instock: '',
     cata_name: '',
     parent_category_id: '',
-    variety_name: '' // Add variety_name to the form data state
+    variety_option:'',
+    variety_name: '' 
   });
-
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [procard, setprocard] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
@@ -64,7 +66,8 @@ const SellProduct = () => {
     data.append('price', formData.price);
     data.append('cata_name', formData.cata_name);
     data.append('parent_category_id', formData.parent_category_id);
-    data.append('variety_name', formData.variety_name); // Append variety_name to form data
+    data.append('variety_option', formData.variety_option); 
+    data.append('variety_name', formData.variety_name);
 
     try {
       const token = localStorage.getItem('token');
@@ -135,6 +138,8 @@ const SellProduct = () => {
         if (Array.isArray(response.data) && response.data.length > 0) {
           setprocard(response.data);
           console.log("Updated procard state:", response.data);
+          
+          
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -149,8 +154,9 @@ const SellProduct = () => {
 
     fetchData();
     productcard();
+    navigate('/sell');
   }, [user, getUser]);
-
+  
   const handleCategoryChange = async (e) => {
     const categoryId = e.target.value;
     setSelectedCategoryId(categoryId);
@@ -176,7 +182,7 @@ const SellProduct = () => {
     }
   };
 
-  const BASE_URL = 'http://127.0.0.1:8900/';
+  const BASE_URL = 'http://127.0.0.1:8100/';
 
   return (
     <div className="AppSell">
@@ -190,6 +196,7 @@ const SellProduct = () => {
           </div>
         )}
         <div className="small-cardSell">
+          <h3>your latest products</h3>
           {loading ? (
             <p>please wait</p>
           ) : procard && procard.length > 0 ? (
@@ -245,8 +252,11 @@ const SellProduct = () => {
             ))}
           </datalist>
           {errors.cata_name && <p className="error">{errors.cata_name[0]}</p>}
+          <label htmlFor="variety_name">Variety option:</label> 
+          <input name="variety_option" value={formData.variety_option} onChange={handleChange} type="text" id="variety_option" className="variety-sell" placeholder="Enter variety name" required />
+          {errors.variety_option && <p className="error">{errors.variety_option[0]}</p>}
 
-          <label htmlFor="variety_name">Variety Name:</label> {/* Add input for variety_name */}
+          <label htmlFor="variety_name">Variety Name:</label> 
           <input name="variety_name" value={formData.variety_name} onChange={handleChange} type="text" id="variety_name" className="variety-sell" placeholder="Enter variety name" required />
           {errors.variety_name && <p className="error">{errors.variety_name[0]}</p>}
 

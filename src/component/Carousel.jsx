@@ -40,23 +40,7 @@ const Carousel = () => {
           }
       };
 
-    try {
-      const su = 19;
-        
-          console.log('Fetching product details for:', su);
-          const response = await axios.get(`/api/detailfor/${su}`);
-          console.log('API Response detail:', response.data);
-
-          if (response.data && response.data.length > 0) {
-              setProduct(response.data[0]); 
-          } else {
-              console.warn('No product data returned from API');
-          }
-      } catch (err) {
-          console.error('Error fetching product details:', err);
-      } finally {
-          setLoading(false);
-      }
+ 
   };
 
   useEffect(() => {
@@ -93,7 +77,7 @@ const Carousel = () => {
     fetchData();
   }, []);
 
-  const BASE_URL = 'http://127.0.0.1:8900/';
+  const BASE_URL = 'http://127.0.0.1:8100/';
 
   return (
     <div className='caro'>

@@ -1,6 +1,6 @@
 .AppSell {
     display: flex;
-    height: 1000px;
+    height: 2000px;
    
     background-color: #333; 
   }
@@ -8,7 +8,7 @@
 
   .sidebarSell {
     width: 250px;
-    height:1000px;
+    height:2000px;
     background-color:#1A1A1A;
     color:white;
     overflow-y: auto;
@@ -27,7 +27,7 @@
   .main-contentSell {
     flex: 1;
     padding: 20px;
-    height: 1000px;
+    height: 2000px;
     color: white;
    
   }
@@ -190,7 +190,9 @@
     flex-direction: column;
     align-items: center;
   }
-  
+  .small-cardSell h3{
+    padding-left: 20px;
+  }
   .product-image {
     width: 80px; 
     height: auto; 

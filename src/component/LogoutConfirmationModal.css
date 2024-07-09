@@ -13,7 +13,7 @@
   }
   
   .modal-content {
-    background: #F93891;
+    background:black;
     padding: 20px;
     border-radius: 5px;
     text-align: center; /* Center the content horizontally */
@@ -22,7 +22,7 @@
   }
   
   .modal-content h2 {
-    color: black; /* Set the color to black */
+    color:white; /* Set the color to black */
     text-align: center; /* Center the text */
     margin: 0; /* Remove default margin */
     padding: 20px 0; /* Add padding to space the text */

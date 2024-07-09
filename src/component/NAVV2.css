@@ -1,19 +1,12 @@
-/* Navbar.css */
-
 .navbar2 {
   display: flex;
- 
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
-  background-color:#1A1A1A;
-  border-top: 1px solid #F93891;
-  color:white;
-  padding:0PX;
+  background-color: #1A1A1A;
+ 
+  color: white;
+  padding: 0;
   width: 100%;
-}
-
-.menu-button {
-  cursor: pointer;
 }
 
 .route-links {
@@ -22,12 +15,60 @@
 
 .route-links a {
   text-decoration: none;
-  color:white;
-  padding: 10px 20px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
   transition: background-color 0.3s ease;
 }
 
 .route-links a:hover {
-  background-color:#F93891;
+  background-color: #F93891;
+  color: black;
+}
+
+.menu-button {
+  width: 40px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"%3E%3Cpath d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"%3E%3C/path%3E%3C/svg%3E');
+  background-size: 60% auto;
+  background-repeat: no-repeat;
+  background-position: left; /* Adjusted to align the icon to the left */
+  padding-left: 10px; /* Ensure padding-left is applied */
+  margin-left: 10px; /* Optional: Add margin-left for additional spacing */
+}
+
+.dropdown-content {
+ 
+  margin-left: 50px;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(160, 25, 25, 0.2);
+  z-index: 1;
+  color: white;
+}
+
+.dropdown-content a {
+  color:white;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #cc3131;
   color:black;
+}
+.dropdown-content h6{
+  padding-left: 50px;
+}
+.card-imageo{
+  padding-left: 10px;
+  padding-right: 20px;
+padding-top: 5px;
 }

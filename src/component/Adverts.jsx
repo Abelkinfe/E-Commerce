@@ -35,7 +35,7 @@ const Advert = () => {
     fetchData();
   }, [categoryName]);
 
-  const BASE_URL = 'http://127.0.0.1:7000/';
+  const BASE_URL = 'http://127.0.0.1:8100/';
 
   return (
     <div className="Advert">

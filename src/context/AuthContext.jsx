@@ -15,7 +15,8 @@ export const AuthProvider = ({ children }) => {
     
     const getUser = useCallback(async () => {
         try {
-          const token = localStorage.getItem('token');
+            const token = localStorage.getItem('token');
+            console.log("token", token);
           if (!token) return;
     
           const config = {
