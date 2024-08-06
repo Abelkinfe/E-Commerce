@@ -26,6 +26,7 @@ const Advert = () => {
 
         const response = await axios.get('/api/productlink', config);
         const data = response.data;
+        console.log("advert",data.category_id);
         setProducts(data[categoryName.toUpperCase()] || []);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -35,7 +36,7 @@ const Advert = () => {
     fetchData();
   }, [categoryName]);
 
-  const BASE_URL = 'http://127.0.0.1:8100/';
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
 
   return (
     <div className="Advert">

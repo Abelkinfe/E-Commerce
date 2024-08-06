@@ -1,31 +1,32 @@
 .cardS {
   padding-left: 20px;
   margin-top: 70px;
-  background-color: #1A1A1A;
+  background-color: black;
   width: 350px;
   height: auto;
   font-family: sans-serif;
   font-weight: 100;
   border-collapse: collapse;
   overflow: hidden;
-  border: 1px solid #f70776;
-  box-shadow: 0 0 10px rgba(247, 7, 118, 1);
+  border: 1px solid white;
+  /* box-shadow: 0 0 10px rgba(247, 7, 118, 1); */
+  box-shadow: 0 0 20px;
   border-radius: 20px;
   margin-right: 5px;
 }
 
 .redo {
   text-align: center;
-  color: #f70776;
+  color:white;
 }
 
 .redoo {
   
-  padding-left: 10px;
-  color: #f70776;
+  padding-left: 150px;
+  color: white;
 }
-.grid-container {
-  background-color: #1A1A1A;
+.grid-containers {
+  background-color: black;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -33,9 +34,12 @@
   height: auto;
   color: #f70776;
 }
-
-.grid-container > div {
-  background-color: #1A1A1A;
+img{
+  width: 80px;
+  height: 80px;
+}
+.grid-containers > div {
+  background-color:black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +59,7 @@
   border-radius: 20px;
   background-color: #1A1A1A;
   padding: 10px;
-  color: #f70776;
+  color:white;
 }
 
 .top-left img {
@@ -69,7 +73,7 @@
 }
 
 .top-left p {
-  color: #f70776;
+  color:white;
   margin-top: 10px;
   text-align: center;
   font-size: 14px;
@@ -78,7 +82,7 @@
   text-align: center;
   padding-top: 3px;
   padding-left: 2px;
-  color: #f70776;
+  color: white;
 }
 .product-cardD{
   text-align: center;

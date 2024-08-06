@@ -19,7 +19,8 @@ import Advert from './component/Adverts'
 import Detail from './component/Detail'
 import Address from './component/Address'
 import DetailPay from './component/DetailPay'
-
+import CartPage from './component/CartPage'
+import ProductSearchResults from './component/ProductSearch'
 function App() {
 
 
@@ -48,10 +49,13 @@ function App() {
           <Route path="/category/:categoryName" element={<Advert />} />
           <Route path="/detail/:su" element={<Detail />} />
           <Route path="/detailpay/:id" element={<DetailPay />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/search" element={<ProductSearchResults />} />
        
       </Routes>
       <div>
-        <Footer></Footer>
+          <Footer></Footer>
+         
       </div>
       
        

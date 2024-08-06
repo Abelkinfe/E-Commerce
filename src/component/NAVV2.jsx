@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import './NAVV2.css';
 import { Link } from 'react-router-dom';
-import cart from './cart.png';
-import customer from './customer-service.png';
-import order from './Order.png';
-
+import { motion } from "framer-motion"
 const NAVV2 = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+  
+  const llinkani = {
+    while: {
+      scale:[1.2,1,1.2,1]
+    }
+  }
 
   return (
     <nav className="navbar2">
-     
+
       <div className="menu-button" onClick={toggleDropdown}></div>
       {isDropdownOpen && (
         <div className="dropdown-content">
@@ -25,18 +28,14 @@ const NAVV2 = () => {
         </div>
       )}
       <div className="route-links">
-        <a href="/customer-service">
-          {/* <img src={customer} className="card-imageo" alt="Customer Service" /> */}
-          Customer Service
-        </a>
-        <a href="/cart">
-          {/* <img src={cart} className="card-imageo" alt="Cart" /> */}
-          Cart
-        </a>
-        <a href="/return-orders">
-          {/* <img src={order} className="card-imageo" alt="Return/Orders" /> */}
-          Return/Orders
-        </a>
+        <motion.div variants={llinkani} whileHover='while' >
+          <Link to="/">  Customer Service</Link>
+        </motion.div>
+        <motion.div variants={llinkani} whileHover='while' ><Link to="/cart">cart</Link>
+        </motion.div>
+        <motion.div variants={llinkani} whileHover='while' >
+          <Link to="/"> Return/Orders</Link>
+          </motion.div>
       </div>
     </nav>
   );

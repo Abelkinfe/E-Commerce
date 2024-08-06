@@ -1,52 +1,149 @@
-.container {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('background.jpg'); /* Replace 'background.jpg' with your background image */
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 50px;
-  }
-  
-  .box {
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 350px;
-    padding: 20px;
-    font-family: sans-serif;
-    font-weight: 100;
-    border-collapse: collapse;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-  }
-  
-  input[type="email"],
-  input[type="text"],
-  input[type="password"] {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 10px;
+.king {
+  display: flex;
+  height: 2000px;
+  background-color: #333; 
+}
+.sideedit {
+  width: 250px;
+  height:2000px;
+  background-color:#282828;
+  color:white;
+  overflow-y: auto;
+ border-radius: 5px;
+ border-color: white;
+
+ 
+}
+
+.editcontainers{
+  flex: 1;
+  padding: 20px;
+  height:100px;
+  color: white;
+ 
+ 
+}
+.editcontainers label{
+  margin-top: 50px;
+    padding-top: 10px;
     color: white;
-    margin-bottom: 20px;
-    width: 1000px;
-    outline: none;
-  }
-  
-  .btn {
-    background-color: blue; /* Make the background transparent */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Add border for visibility */
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Add transition effect */
-  }
-  
-  input[type="submit"]:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Change background color on hover */
+}
+
+.htu{
+ margin-left: 400px;
+}
+
+
+
+.editform {
+  margin-left: 30px;
+  background-color:black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  border-radius: 10px;
+  width: 1000px;
+  height: 500px;
+  color: white;
+}
+
+.editname{
+  margin-left: 1px;
+  margin-right: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 900px;
+  height: 50px;
+  padding-right: 50px;
+
+  padding-left: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc; 
+  box-sizing: border-box; 
+  outline: none; 
+}
+.editemail{
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 900px;
+  padding-right: 50px;
+  height: 50px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc; 
+  box-sizing: border-box; 
+  outline: none; 
+}
+.editpassword{
+  margin-left: 15px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 900px;
+  padding-right: 50px;
+  height: 50px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc; 
+  box-sizing: border-box; 
+  outline: none; 
+}
+.editimage{
+  margin-right: 650px;
+}
+.editfile[type="file"]::-webkit-file-upload-button {
+  padding-left: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 0px;
+  background-color:#07f773; 
+  color:black; 
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  border: none;
+  cursor: pointer; 
+  border-bottom: 1px;
   }
 
-  button{
-    background: transparent;
-  }
+
+.user-containeredit {
+  padding: 20px;
   
+}
+
+.circle-imageedit {
+width: 80px;
+height: 80px; 
+border-radius: 50%; 
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color:transparent;
+
+}
+
+.usernameedit {
+  margin-top: 20px;
+  margin-left: 10px;
+  
+  display: block;
+}
+.user-imageedit{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+
+}
+.btnedit {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; 
+  background-color: #007bff; 
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

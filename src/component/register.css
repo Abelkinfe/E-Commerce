@@ -1,73 +1,84 @@
-/* LoginForm.css */
-.login-form-container2 {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    /* border: 1px solid #ccc; */
-    border-radius: 5px;
-  
-    background-color:transparent;
-    /* width: 1000px; */
-    font-family: sans-serif;
-    font-weight: 100;
-    border-collapse: collapse;
-    overflow: hidden;
-    box-shadow: 0 0 20px;
-    color:white;
+.register-form {
+  width: 500px;
+  height: auto; /* Adjust height to accommodate the content */
+  margin: 0 auto; /* Center the card horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center the form vertically */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add border shadow */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px;
+  background-color: black; /* Optional: Add a background color */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
 
+.register-form h2 {
+  text-align: center; /* Center the <h2> */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
 
-  }
-  h2{
-    color: #FFFAFA;
-    
+form {
+  width: 100%; /* Ensure the form takes the full width of the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form elements */
+}
 
-  }
-  
-  .form-group2 {
-    margin-bottom: 20px;
-   
-    
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    /* margin-left: 5px; */
-    color:white;
-  }
-  
-  .form-control2 {
-    
-    background-color: white;
-    width: 300px;;
-    padding: 8px;
-    color: black;
-    font-size: 16px;
-    /* border: 1px solid #ccc; */
-    border: none;
-    border-bottom: 1px solid white; /* Change the color as needed */
-    outline: none;
-    border-radius: 3px;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .submit-btn {
-    background-color: #f70776;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
+.form-reg {
+  width: 100%; /* Ensure the input containers take the full width */
+  margin-bottom: 20px; /* Add some space between the input fields */
+}
+
+.form-reg label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Optional: Make the label bold */
+}
+
+.form-reg input[type="text"],
+.form-reg input[type="email"],
+.form-reg input[type="password"],
+.form-reg input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc; /* Add bottom border line */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  outline: none; /* Remove default outline on focus */
+}
+
+.form-reg input[type="text"]:focus,
+.form-reg input[type="email"]:focus,
+.form-reg input[type="password"]:focus,
+.form-reg input[type="file"]:focus {
+  border-bottom-color: #000; /* Change border color on focus */
+}
+
+.rg-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Optional: Add some border radius */
+  background-color: #007bff; /* Optional: Change the background color */
+  color: #fff; /* Optional: Change the text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rg-btn:hover {
+  background-color: #0056b3; /* Optional: Change the background color on hover */
+}
+
+.register-form p {
+  margin-top: 20px; /* Add some space above the paragraph */
+  text-align: center; /* Center the paragraph */
+}
+
+.register-form a {
+  color: #007bff; /* Optional: Change the link color */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.register-form a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

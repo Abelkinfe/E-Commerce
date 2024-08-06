@@ -9,12 +9,12 @@
   .sidebarSell {
     width: 250px;
     height:2000px;
-    background-color:#1A1A1A;
+    background-color:#282828;
     color:white;
     overflow-y: auto;
    border-radius: 5px;
    border-color: white;
-   border-top: 1px solid #f70776;
+
    
   }
 
@@ -35,9 +35,12 @@
   
  
   .transparent-formSell {
-    background-color:#333;
+    background-color:black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 30px; 
     border-radius: 10px;
     width: 1000px;
+   
     color: white;
   }
   
@@ -48,17 +51,15 @@
     color: white;
   }
   
-  .buttonsell {
-    display: block;
-    background-color:#f70776;
-    color:black;
+  .btn {
+    margin-top: 50px;
+    margin-bottom: 15px;
     border: none;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 5px; 
+    background-color: #007bff; 
+    color: #fff; 
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .transparent-formSell button:hover {
@@ -82,45 +83,122 @@
 
   .nameSell{
    
-    width: 200px;
+    width: 950px;
     padding-right: 50px;
+    
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
   }
   .discSell{
-    height: 70px;
-    width: 600px;
+    
+    width: 950px;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    outline: none; 
   }
   .blue-inputSell {
-    border-color:#f70776;
-    background-color:#333;
-    color:white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    width: 950px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
   }
-  .price-Sell{
-    height: 40px;
-    width: 600px;
+  .priceo{
+   
+    width: 950px;
+    padding-right: 50px;
+    
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
   }
   .quantity_sell{
     height: 40px;
     width: 600px;
+    width: 950px;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
   }
   .select-sell{
     height: 40px;
     width: 100px;
     margin:10px auto  10px  10px;
     display: block;
+    width: 950px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    outline: none; 
+    width: 200px;
+    padding-right: 50px;
+    width: 450px;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
   }
   .select-selltype{
+    
     height: 40px;
     width: 100px;
     margin:10px auto  10px  10px;
-   
-   
     display: block;
+    width: 950px;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    outline: none; 
+    width: 200px;
+    padding-right: 50px;
+    width: 450px;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
   }
  
+
+  .variety-sell{
+    
+    width: 950px;
+    padding-right: 50px;
+   
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc; 
+    box-sizing: border-box; 
+    outline: none; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   .user-containerSell {
     padding: 20px;
@@ -178,58 +256,71 @@
 
 
 
-  .small-cardSell {
-    width: 100px; 
-    height: auto; 
-    border-top: 1px solid #f70776; 
-    border-bottom: 1px solid #f70776; 
-    border-radius: 5px; 
-    padding: 5px; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  .sell-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
+    padding: 20px;
+    background-color: transparent;
+  }
+  .product-card-sell {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 100%;
+  }
+
+  .product-img-sell {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; 
+  }
+
+
+  .product-img-sell img {
+    width: 80px;
+    height: 80px;
+    height: auto;
+    border-radius: 8px;
+  }
+  .product-details-sell {
+    flex: 2;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .small-cardSell h3{
-    padding-left: 20px;
-  }
-  .product-image {
-    width: 80px; 
-    height: auto; 
-    border-radius: 5px; 
-    margin-bottom: 5px; 
-  }
-  
-  .product-name {
-    font-size: 12px;
-    margin: 0; 
-    text-align: center; 
-  }
-
-  .product-qty {
-    font-size: 12px;
-    margin: 0; 
-    text-align: center; 
-  }
-  
-  .product-price {
-    font-size: 12px;
-    margin: 0; 
-    text-align: center; 
+    justify-content: center;
   }
   
   
-
-
-
-
-
-
-
-
-
-
-
+  .product-details-sell h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;}
+  
+  
+  .product-details-sell p {
+    font-size: 16px;
+    font: bold;
+    margin-bottom: 10px;
+    color:yellow;
+  }
+  .product-details-sell span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color:white;
+  }
 
 
 

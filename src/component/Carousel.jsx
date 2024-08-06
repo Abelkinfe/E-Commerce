@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import axios from '../api/axios';
 import './carousel.css';
-import dd from './dddd.jpg'; // Assuming you have this image as a fallback or placeholder
+import dd from './dddd.jpg'; 
 
 const Carousel = () => {
   const settings = {
@@ -77,7 +77,7 @@ const Carousel = () => {
     fetchData();
   }, []);
 
-  const BASE_URL = 'http://127.0.0.1:8100/';
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
 
   return (
     <div className='caro'>

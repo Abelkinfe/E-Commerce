@@ -2,15 +2,19 @@
   .App {
     display: flex;
     height: 100vh;
-    /* height: inherit; */
+    /* height: inherit; */ 
     background-color: #333; 
   }
   
   .sidebar {
-    width: 250px; 
-    height: inherit;
-    background-color: #C4C484;
-    color: white;
+    width: 250px;
+    height:2000px;
+    background-color:#282828;
+    color:white;
+    overflow-y: auto;
+   border-radius: 5px;
+   border-color: white;
+
   }
   .imgpro{
     background-color: blue;
@@ -32,11 +36,15 @@
   }
   
   .circle-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ccc;
-    background-size: cover;
+    width: 80px;
+    height: 80px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent;
+    
   }
   
   .username {
@@ -56,7 +64,7 @@
 
 
   .add-payment-button {
-    background-image: linear-gradient(to right, purple,rgb(204, 137, 60));
+    background-color: rgb(10, 10, 148);
     color: white;
     font-size: 16px;
     padding: 10px 20px;
@@ -96,7 +104,7 @@
 
 
   table{
-    background-color: azure;
+    background-color: black;
     width: 1000px;
     font-family: sans-serif;
     font-weight: 100;
@@ -117,7 +125,7 @@ th{
     text-align: left;
 }
 thead th{
-    background-image: linear-gradient(to right, blue,white);
+    
 }
 
 tbody tr:hover{

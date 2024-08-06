@@ -13,6 +13,7 @@ const DetailPay = () => {
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState(null);
     const [paystatus, setpaystatus] = useState();
     const navigate = useNavigate();
 
@@ -40,8 +41,8 @@ const DetailPay = () => {
             }
         };
 
-        const baseURL = 'http://127.0.0.1:8100';
-        const fullURL = `${baseURL}/api/paydetailproduct/${id}`;
+        const baseURL = import.meta.env.VITE_BASE_URL;
+        const fullURL = `${baseURL}api/paydetailproduct/${id}`;
 
         try {
             const response = await axios.get(fullURL, config);
@@ -54,10 +55,38 @@ const DetailPay = () => {
         }
     };
 
+    const fetchPaymentMethod = async () => {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            console.warn('No token found');
+            return;
+        }
+
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        };
+
+        const baseURL = import.meta.env.VITE_BASE_URL;
+        const fullURL = `${baseURL}api/paymentmethod`;
+
+        try {
+            const response = await axios.get(fullURL, config);
+            console.log('Payment Method Response:', response.data);
+            setPaymentMethod(response.data);
+        } catch (err) {
+            console.error('Error fetching payment method:', err);
+        }
+    };
+
     const handlePayment = async (e) => {
         e.preventDefault();
         if (!product) return;
-
+        const baseUrl = import.meta.env.VITE_BASE_URL;
+        
+            const fullUrl = `${baseUrl}api/chapa`;
      
         const commission = product.price * 0.10;
         const totalAmount = parseFloat(product.price) + parseFloat(commission);
@@ -83,7 +112,7 @@ const DetailPay = () => {
             }
         };
 
-            const response = await axios.post('http://127.0.0.1:8100/api/transactions', {
+            const response = await axios.post(`${baseUrl}api/transactions`, {
                 amount: totalAmount,
                 currency: "ETB",
                 email: email,
@@ -95,6 +124,7 @@ const DetailPay = () => {
             },config);
 
             const txRef = response.data.tx_ref;
+            const trans_id = response.data.transaction_id;
 
             const paymentDetails = {
                 amount: totalAmount,
@@ -110,7 +140,9 @@ const DetailPay = () => {
                     title: "kiki",
                     description: "payment"
                 }
-            }; const paymentResponse = await axios.post("http://127.0.0.1:8100/api/chapa", paymentDetails, {
+               
+            }; 
+            const paymentResponse = await axios.post(fullUrl, paymentDetails, {
                 headers: {
                     // 'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -127,22 +159,7 @@ const DetailPay = () => {
             console.error('Error:', error);
         }
 
-            // const paymentResponse = await fetch("https://api.chapa.co/v1/transaction/initialize", {
-            //     method: 'POST',
-            //     headers: {
-            //         "Authorization": `Bearer ${CHAPA_TOKEN}`,
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify(paymentDetails)
-            // });
-        //     const result = await paymentResponse.json();
-        //     console.log(result);
-        //     if (result.status === 'success') {
-        //         navigate(result.data.redirect_url);
-        //     }
-        // } catch (error) {
-        //     console.error('Error:', error);
-        // }
+           
     };
 
     useEffect(() => {
@@ -164,20 +181,30 @@ const DetailPay = () => {
                     <form onSubmit={handlePayment}>
                         <div className="form-group">
                             <label>First Name</label>
-                            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+                                <input type="text" value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    placeholder={paymentMethod ? paymentMethod.first_name : ''}
+                                    required />
                         </div>
                         <div className="form-group">
                             <label>Last Name</label>
-                            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+                                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)}
+                                    placeholder={paymentMethod ? paymentMethod.last_name : ''}
+                                    required />
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                                    placeholder={paymentMethod ? paymentMethod.email : ''}
+                                    required />
                         </div>
                         <div className="form-group">
                             <label>Phone Number</label>
-                            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-                        </div>
+                                <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}
+                                     placeholder={paymentMethod ? paymentMethod.phone_number : ''}
+                                    required />
+                            </div>
+                          
                         <button type="submit" className="pay-button">Pay <span className='red'>{product.price * 1.10}$</span></button> {/* Include 10% commission */}
                     </form>
                 </div>

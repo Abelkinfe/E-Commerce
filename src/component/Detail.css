@@ -1,31 +1,30 @@
-/* Detail.css */
 
-/* Container for the entire detail section */
-.detail-container {
+.detail-containerd {
   display: flex;
-  flex-wrap: wrap; /* Allows the cards to wrap if there's not enough space */
-  justify-content: center; /* Centers the cards horizontally */
-  gap: 20px; /* Space between cards */
+
+  flex-wrap: wrap; 
+  background-color: red;
+  justify-content: center;
+  gap: 20px; 
   padding: 20px;
   background-color: transparent;
 }
 
-/* Styling for individual product cards */
-.product-card {
+
+.detail-card {
   display: flex;
   flex-direction: row;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  max-width: 800px;
+ 
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-  color: white; /* Text color */
-  width: 100%; /* Make sure cards take the full width available */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 1000px;
 }
 
-/* Container for the product image */
 .product-img {
   flex: 1;
   padding: 20px;
@@ -33,17 +32,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent; /* Ensures no background color */
+  background-color: transparent; 
 }
 
-/* Styling for the product image */
+
 .product-img img {
-  max-width: 100%;
+ width: 300px;
+ height: auto;
   height: auto;
   border-radius: 8px;
 }
 
-/* Container for product details */
+
 .product-details {
   flex: 2;
   padding: 20px;
@@ -52,33 +52,32 @@
   justify-content: center;
 }
 
-/* Heading for product name */
+
 .product-details h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: white; /* Ensures the text is visible on a dark background */
-}
+  color: white;}
 
-/* Paragraph for product details */
+
 .product-details p {
   font-size: 16px;
   margin-bottom: 10px;
   color: white;
 }
 
-/* Container for each product item */
+
 .product-item {
   margin-top: 15px;
   padding: 10px;
   border-top: 1px solid #eee;
 }
 
-/* Paragraph styling for product item details */
+
 .product-item p {
   margin: 5px 0;
 }
 
-/* Styling for the variety section */
+
 .variety {
   margin-left: 10px;
 }
@@ -88,9 +87,44 @@
   color: #777;
 }
 
-/* Error message styling */
+
 .error {
   color: red;
   text-align: center;
   margin-top: 20px;
 }
+.addcart-button{
+  padding: 12px;
+  background-color:yellow;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+.pay-buttondet {
+  padding-left: 170px;
+  padding-top: 10px;
+  display: flex;
+  height: 40px;
+ 
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: rgb(10, 4, 4);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+
+
+
+
+
+
+

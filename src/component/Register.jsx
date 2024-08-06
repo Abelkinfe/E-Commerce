@@ -33,26 +33,26 @@ const Register = () => {
   };
 
   return (
-    <div className="login-form-container2">
+    <div className="register-form">
       <h2>Registration</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group2">
+        <div className="form-reg">
           <label>Name:</label>
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         </div>
-        <div className="form-group2">
+        <div className="form-reg">
           <label>Email:</label>
           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
-        <div className="form-group2">
+        <div className="form-reg">
           <label>Password:</label>
           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
-        <div className="form-group2">
+        <div className="form-reg">
           <label>User Image:</label>
           <input type="file" name="userimage" onChange={handleChange} />
         </div>
-        <button type="submit">Submit</button>
+        <button className='rg-btn' type="submit">Submit</button>
       </form>
       <p>if you have an account? <Link to="/login">Sign in</Link></p>
     </div>

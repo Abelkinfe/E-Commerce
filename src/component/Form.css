@@ -1,77 +1,82 @@
-/* LoginForm.css */
-.login-form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    /* border: 1px solid #ccc; */
-    border-radius: 5px;
-  
-    background-color:transparent;
-    /* width: 1000px; */
-    font-family: sans-serif;
-    font-weight: 100;
-    border-collapse: collapse;
-    overflow: hidden;
-    box-shadow: 0 0 20px;
-    color: white;
+.login-form {
+  width: 500px;
+  height: auto;
+  margin-top: 30px;
+  margin: 0 auto;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; 
+  padding: 20px;
+  background-color: #050505; 
+  box-sizing: border-box; 
+}
 
-  .p{
-    color: white;
-  }
-  }
-  h2{
-    color:black;
-    margin-left: 150px;
+.login-form h2 {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
 
-  }
+.form {
+  width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.input-group {
+  width: 400px;
+  margin-bottom: 20px;
+ border-color: #007bff;
   
-  .form-group {
-    margin-bottom: 20px;
-   
-    
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    color:white;
-  }
-  
-  .form-control {
-    
-    background-color: white;
-    width: 300px;;
-    padding: 8px;
-    color: black;
-    font-size: 16px;
-    /* border: 1px solid #ccc; */
-    border: none;
-    border-bottom: 1px solid white; /* Change the color as needed */
-    outline: none;
-    border-radius: 3px;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .submit-btn {
-    background-color: #007bff;
-    color:white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 3px;
-    margin-left: 150px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"]
+ {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc; /* Add bottom border line */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  outline: none; /* Remove default outline on focus */
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-weight: bold; 
+}
+
+
+
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; 
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;}
+
+.login-form p {
+  margin-top: 20px; 
+  text-align: center; 
+}
+
+.login-form a {
+  color: #007bff; 
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+
+

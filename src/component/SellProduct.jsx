@@ -3,8 +3,33 @@ import useAuthContext from '../context/AuthContext';
 import axios from '../api/axios';
 import './Sell.css';
 import { useNavigate } from 'react-router-dom';
-
+import {  animate, delay, motion } from "framer-motion"
 const SellProduct = () => {
+  const anifo= {
+    int: {
+        y:-1000
+      },
+      ani: {
+        y: 0,
+        transition: {
+          delay: 1.5,
+          type: 'spring',
+          stiffness:500
+        }
+      }
+  }
+  const sideani = {
+    ini: {
+        x:-700
+    },
+    ani: {
+        x: 0,
+        transition: {
+            type: 'spring',
+            stiffness:500
+        }
+    }
+  }
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -16,6 +41,7 @@ const SellProduct = () => {
     variety_option:'',
     variety_name: '' 
   });
+
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [procard, setprocard] = useState(null);
@@ -85,7 +111,7 @@ const SellProduct = () => {
 
       const response = await axios.post('api/sellproduct', data, config);
       console.log(response.data);
-
+      window.location.reload();
     } catch (error) {
       if (error.response && error.response.status === 422) {
         setErrors(error.response.data.errors);
@@ -154,7 +180,7 @@ const SellProduct = () => {
 
     fetchData();
     productcard();
-    navigate('/sell');
+    navigate('/sell');/*this is  the  one to reload the page again*/
   }, [user, getUser]);
   
   const handleCategoryChange = async (e) => {
@@ -182,11 +208,11 @@ const SellProduct = () => {
     }
   };
 
-  const BASE_URL = 'http://127.0.0.1:8100/';
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   return (
     <div className="AppSell">
-      <div className="sidebarSell">
+      <motion.div variants={sideani} animate='ani' initial='ini'  className="sideedit">
         {user && (
           <div className="user-containerSell">
             <div className="circle-imagesell">
@@ -195,25 +221,31 @@ const SellProduct = () => {
             <span className="username">{user.name}</span>
           </div>
         )}
-        <div className="small-cardSell">
+        <div className="sell-container">
           <h3>your latest products</h3>
           {loading ? (
             <p>please wait</p>
           ) : procard && procard.length > 0 ? (
             procard.map((product, index) => (
-              <div key={index} className="small-cardSell">
-                 <img src={`${BASE_URL}storage/${product.image}`} alt="" className="user-image" />
-                <p className="product-name"><span>name-</span>{product.name}</p>
-                <p className="product-name"><span>quantity-</span>{product.qty_instock}</p>
-                <p className="product-name"><span>price-</span>{product.price}</p>
+              <div key={index} className="product-card-sell">
+                <div className="product-img-sell" >
+                <img src={`${BASE_URL}storage/${product.image}`} alt=""/>
+                </div>
+                <div className='product-details-sell'>
+                <p ><span>name-</span>{product.name}</p>
+                <p ><span>quantity-</span>{product.qty_instock}</p>
+                <p ><span>price-</span>{product.price}</p>
+                 </div>
+               
               </div>
             ))
           ) : (
             <p>No product card found</p>
           )}
         </div>
-      </div>
+        </motion.div>
       <div className="main-contentSell">
+      <motion.div variants={anifo} initial='ini' animate='ani'>
         <form onSubmit={handleSubmit} className="transparent-formSell">
           <label htmlFor="product_name">Product Name:</label>
           <input name="name" value={formData.name} onChange={handleChange} type="text" id="product_name" className="nameSell" placeholder="Enter product name" required />
@@ -228,7 +260,7 @@ const SellProduct = () => {
           {errors.product_img && <p className="error">{errors.product_img[0]}</p>}
 
           <label htmlFor="price">Price:</label>
-          <input name="price" value={formData.price} onChange={handleChange} type="text" id="price" className="price-sell" placeholder="Enter price" required />
+          <input name="price" value={formData.price} onChange={handleChange} type="text" id="price" className="priceo" placeholder="Enter price" required />
           {errors.price && <p className="error">{errors.price[0]}</p>}
 
           <label htmlFor="qan">Quantity:</label>
@@ -260,8 +292,9 @@ const SellProduct = () => {
           <input name="variety_name" value={formData.variety_name} onChange={handleChange} type="text" id="variety_name" className="variety-sell" placeholder="Enter variety name" required />
           {errors.variety_name && <p className="error">{errors.variety_name[0]}</p>}
 
-          <button className="buttonsell" type="submit">Submit</button>
-        </form>
+          <button className="btn" type="submit">Submit</button>
+          </form>
+          </motion.div>
       </div>
     </div>
   );

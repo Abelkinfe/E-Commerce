@@ -7,10 +7,90 @@ import profile from './profile.png'
 import customer from './customer.png'
 import payment from './payment.png'
 import stock from './stock.png'
+import {  animate, delay, motion } from "framer-motion"
 const Account = () => {
+  const acccardleft = {
+    ini: {
+      x:-700
+    },
+    ani: {
+      x: 0,
+      transition: {
+        delay: 0.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
+  const acccardlefttu = {
+    ini: {
+      x:-700
+    },
+    ani: {
+      x: 0,
+      transition: {
+        delay: 1.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
+  const acccardtop = {
+    ini: {
+      y:-700
+    },
+    ani: {
+      y: 0,
+      transition: {
+        delay: 0.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
+  const acccardright = {
+    ini: {
+      x:700
+    },
+    ani: {
+      x: 0,
+      transition: {
+        delay: 0.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
+  const acccardrighttu = {
+    ini: {
+      x:700
+    },
+    ani: {
+      x: 0,
+      transition: {
+        delay: 1.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
+  const acccardbot = {
+    ini: {
+      y:700
+    },
+    ani: {
+      y: 0,
+      transition: {
+        delay: 1.5,
+        type: 'spring',
+        stiffness:200
+      }
+    }
+  }
   return (
     <>
       <div className='box-container'>
+        <motion.div variants={acccardleft} initial='ini' animate='ani'>
       <Link to="/">
           <div className='boxx'>
             
@@ -24,7 +104,9 @@ const Account = () => {
           
           </div>
         </Link>
-        
+        </motion.div>
+
+        <motion.div variants={acccardtop} initial='ini' animate='ani'>
         <Link to="/sell">
         <div className='boxx'>
         <div className='image-container'>
@@ -37,9 +119,9 @@ const Account = () => {
        
           </div>
         </Link>
-        
+        </motion.div>
 
-
+        <motion.div variants={acccardright} initial='ini' animate='ani'>
         <Link to="/address">
         <div className='boxx'>
         <div className='image-container'>
@@ -52,7 +134,9 @@ const Account = () => {
        
           </div>
         </Link>
-        
+        </motion.div>
+
+        <motion.div variants={acccardlefttu} initial='ini' animate='ani'>
         <Link to="/editprofile">
         <div className='boxx'>
         <div className='image-container'>
@@ -65,7 +149,8 @@ const Account = () => {
        
           </div>
         </Link>
-        
+        </motion.div>
+        <motion.div variants={acccardbot} initial='ini' animate='ani'>
         <Link to="/">
         <div className='boxx'>
         <div className='image-container'>
@@ -77,7 +162,11 @@ const Account = () => {
       </div>
        
           </div>
-        </Link>
+          </Link>
+          
+        </motion.div>
+        
+        <motion.div variants={acccardrighttu} initial='ini' animate='ani'>
         <Link to="/payment">
         <div className='boxx'>
         <div className='image-container'>
@@ -89,7 +178,9 @@ const Account = () => {
       </div>
        
           </div>
-          </Link>
+        </Link>
+      </motion.div>
+      
         </div>
       </>
   )

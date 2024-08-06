@@ -2,10 +2,11 @@ import React from 'react';
 import './Footer.css'; // Remember to create and import your CSS file
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; 2023 Your Website</p>
+        <p>&copy;{ currentYear} KIKI </p>
         <div className="footer-links">
           <a href="/about">About</a>
           <a href="/contact">Contact</a>

@@ -3,9 +3,45 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './card.css';
 import placeholderImg from './dddd.jpg';
-
+import { animate, motion } from "framer-motion"
 const Card = () => {
   const [cardcate, setCardCate] = useState([]);
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
+
+  const cardmotionleft = {
+    inti: {
+     x:-1000
+    },
+    animate: {
+      x:0,
+      trans: {
+        delay:7000
+      }
+      
+    }
+ }
+ const cardmotionright = {
+  inti: {
+   x:1000
+  },
+  animate: {
+    x:0,
+    trans: {
+      delay:7000
+    }
+    
+  }
+}
+ const crddef= {
+  while: {
+    scale: [1.1, 1, 1.1, 1],
+    
+  }
+}
+
+
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +51,7 @@ const Card = () => {
           console.error("Token not found in localStorage.");
           return;
         }
-
+        console.log(BASE_URL);
         const config = {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -37,8 +73,8 @@ const Card = () => {
 
     fetchData();
   }, []);
+  
 
-  const BASE_URL = 'http://127.0.0.1:8100/';
 
   const renderProduct = (product, index) => {
     const categoryID = product.category_id; 
@@ -57,41 +93,41 @@ const Card = () => {
 
   return (
     <>
-      <div className="cardS">
+      <motion.div variants={cardmotionleft} initial='inti' animate='animate'  className="cardS">
         <h2 className="redoo">FACE</h2>
-        <div className="grid-container">
+        <motion.div variants={crddef} whileHover='while' className="grid-containers">
           {cardcate[1]?.map((product, index) => renderProduct(product, index))}
-        </div>
+        </motion.div>
         <div className="see-more">
           <Link to="/category/face">See More</Link>
         </div>
-      </div>
+      </motion.div>
 
       <div className="cardS">
         <h2 className="redoo">EYE</h2>
-        <div className="grid-container">
+        <motion.div variants={crddef} whileHover='while' className="grid-containers">
           {cardcate[2]?.map((product, index) => renderProduct(product, index))}
-        </div>
+        </motion.div>
         <div className="see-more">
           <Link to="/category/eye">See More</Link>
         </div>
       </div>
 
-      <div className="cardS">
+      <motion.div variants={cardmotionright}  initial='inti' animate='animate'  className="cardS">
         <h2 className="redoo">LIPS</h2>
-        <div className="grid-container">
+        <motion.div variants={crddef} whileHover='while' className="grid-containers">
           {cardcate[3]?.map((product, index) => renderProduct(product, index))}
-        </div>
+        </motion.div>
         <div className="see-more">
           <Link to="/category/lip">See More</Link>
         </div>
-      </div>
+      </motion.div>
 
       <div className="cardS">
         <h3 className="redo">MAKEUP TOOL</h3>
-        <div className="grid-container">
+        <motion.div variants={crddef} whileHover='while' className="grid-containers">
           {cardcate[4]?.map((product, index) => renderProduct(product, index))}
-        </div>
+        </motion.div>
         <div className="see-more">
           <Link to="/category/makeup-tool">See More</Link>
         </div>
@@ -99,9 +135,9 @@ const Card = () => {
 
       <div className="cardS">
         <h3 className="redo">MAKEUP REMOVER</h3>
-        <div className="grid-container">
+        <motion.div variants={crddef} whileHover='while' className="grid-containers">
           {cardcate[5]?.map((product, index) => renderProduct(product, index))}
-        </div>
+        </motion.div>
         <div className="see-more">
           <Link to="/category/makeup-remover">See More</Link>
         </div>

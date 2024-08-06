@@ -1,11 +1,11 @@
-.App {
+.pay-App {
     display: flex;
     height: 2000px;
     /* height: inherit; */
     background-color: #333; 
   }
   
-  .sidebar {
+  .pay-sidebar {
     width: 250px; 
     border-top: 1px solid #f70776;
     background-color:#1A1A1A;
@@ -23,9 +23,10 @@
     height: 40px;
     width: 100px;
   }
-  .nam{
-    background-color: aquamarine;
-    width: 200px;
+  .pay-nam{
+    background-color:black;
+    width: 1000px;
+    height: 40px;
   }
   .user-container {
     padding: 20px;
@@ -49,7 +50,7 @@
     display: block;
   }
   
-  .main-content {
+  .pay-main-content {
     flex: 1;
     padding: 20px;
   }
@@ -65,22 +66,22 @@
 
 
 
-  .transparent-form {
-    background-color: #333(255, 255, 255, 0.5); 
+  .pay-transparent-form {
+    background-color: black; 
     padding: 20px;
     border-radius: 10px;
   }
   
-  .transparent-form label,
+  .pay-transparent-form label,
  
-  .transparent-form select,
-  .transparent-form button {
+  .pay-transparent-form select,
+  .pay-transparent-form button {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   
-  .transparent-form button {
+  .pay-transparent-form button {
     background-color:blue;
     color: white;
     border: none;
@@ -89,7 +90,7 @@
     cursor: pointer;
   }
   
-  .transparent-form button:hover {
+  .pay-transparent-form button:hover {
     background-color:blue;
   }
   .blue-input[type="file"]::-webkit-file-upload-button {
